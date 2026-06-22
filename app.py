@@ -1,9 +1,11 @@
 import os
 import streamlit as st
 
-os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
-os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
-import streamlit as st
+if "GROQ_API_KEY" in st.secrets:
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+if "TAVILY_API_KEY" in st.secrets:
+    os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
+
 from pipeline import run_research_pipeline
 
 # ── Page config ────────────────────────────────────────────────────────────────
