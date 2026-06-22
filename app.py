@@ -1,3 +1,8 @@
+import os
+import streamlit as st
+
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
+os.environ["TAVILY_API_KEY"] = st.secrets["TAVILY_API_KEY"]
 import streamlit as st
 from pipeline import run_research_pipeline
 
